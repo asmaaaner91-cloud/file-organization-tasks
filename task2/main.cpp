@@ -1,1 +1,19 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
 
+int main()
+{
+  string fruit;
+  ifstream file("fruit.txt");
+  while(getline(file,fruit))
+  {
+  cout<<fruit<<endl;
+  }
+  file.close();
+  ofstream outfile("fruit.txt",ios::app);
+  outfile<<"fresh fruits"<<endl;
+  outfile.close();
+    return 0;
+}
